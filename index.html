@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Manager 2025</title>
+    <link rel="icon" type="image/x-icon" href="/Images/info.svg">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h5 id="toolbar"><button title="Switches to the Settings tab." id="settingsbutton" class="uibutton" style="font-size: 15px;"><img src="Images/settings.svg" style="width: 16px; height: 16px; transform: translateY(2px);">Settings</button><button id="shopbutton" title="Switches to the Products tab." class="uibutton"  style="font-size: 15px;"><img src="Images/products.svg" style="width: 16px; height: 16px; transform: translateY(2px);">Company Products</button><button id="infobutton" title="Switches to the Company Information tab." class="uibutton"  style="font-size: 15px;"><img src="Images/info.svg" style="width: 16px; height: 16px; transform: translateY(2px);">Info</button></h5>
+    <div class="center" id="create">
+        <h2>Welcome to product manager 2025!</h2>
+        <h3>A webgame developed by Terrarko</h3>
+        <h4>Now, lets make your company:</h4>
+        <h1 style="font-size: 15px; color: #f57971;">!!!MAX 16 CHARACTERS!!!</h1>
+        <input placeholder="Company Name..." type="text" id="cname" maxlength="16" style="width: 200px;">
+        <h3>Starting balance:</h3>
+        <select id="sbalance">
+            <option>2,000,000$</option>
+            <option>5,000,000$</option>
+            <option>10,000,000$</option>
+        </select>
+        <button id="createc" title="Creates your company and starts the game!" class="uibutton">Create</button>
+    </div>
+
+    <div id="infotab">
+        <h3>Company Name: <span id="cnamei">WEMAKEPRODUCTS</span><button style="height: 45px; width: 45px; text-align: center;" title="Rename your company." id="rename"  class="uibutton"><img src="Images/edit.svg"></button><input style="display:none; width: 265px; font-size: 20px;" type="text" id="rname" maxlength="16"><button style="height: 45px; width: 45px; text-align: center; display: none;" title="Confirm the rename operation." id="confirm"><img src="Images/check.svg"></button></h3>
+        <h3>Company Balance: <span id="cbalance">0 (currency)</span></h3>
+    </div>
+
+    <div id="shoptab">
+        <h3>Products: <div id="products" class="productz"></div></h3>
+        <input placeholder="Product Name..." id="pname" type="text"><input placeholder="Product Cost..." id="pcost" type="number"><button id="createp" class="uibutton">Create Product</button>
+    </div>
+
+    <div id="settingstab">
+        <h3>Currency used (Not Converted!!): <select id="cselect">
+            <option>$</option>
+            <option>Kč</option>
+            <option>£</option>
+        </select></h3>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

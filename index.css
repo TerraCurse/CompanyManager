@@ -1,0 +1,62 @@
+*{
+    font-family: Roboto Condensed;
+    color: white;
+    font-weight: bold;
+}
+
+body{
+    background-color: rgb(37, 37, 37);
+}
+
+.center{
+    text-align: center;
+}
+
+input{
+    background-color: rgb(30, 30, 35);
+    border-style: solid;
+    border-radius: 7px;
+    padding: 7px;
+    border-color: rgb(35, 35, 40);
+    border-width: 4px;
+    transition: all 250ms;
+    margin: 4px;
+}
+input:hover{
+    background-color: rgb(33, 33, 38);
+    transform: translateY(-1px);
+}
+
+select{
+    background-color: rgb(30, 30, 35);
+    border-style: solid;
+    border-radius: 7px;
+    padding: 7px;
+    border-color: rgb(35, 35, 40);
+    border-width: 4px;
+    transition: all 250ms;
+    cursor: pointer;
+}
+select:hover{
+    background-color: rgb(33, 33, 38);
+    transform: translateY(-1px);
+}
+
+button{
+    background-color: rgb(30, 30, 35);
+    border-style: solid;
+    border-radius: 7px;
+    padding: 7px;
+    border-color: rgb(35, 35, 40);
+    border-width: 4px;
+    cursor: pointer;
+    margin: 2px;
+    transition: all 250ms;
+}
+button:hover{
+    background-color: rgb(33, 33, 38);
+    transform: translateY(-2px);
+}
+button:active{
+    background-color: rgb(27, 27, 32);
+}
