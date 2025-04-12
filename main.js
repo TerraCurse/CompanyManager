@@ -6,7 +6,9 @@ var cnamei = document.getElementById("cnamei");
 var confirm = document.getElementById("confirm");
 var currency = "CZK"
 var cansearch = false
+var cancreate = true
 var cbalance = 0
+const delay = ms => new Promise(res => setTimeout(res, ms));
 document.getElementById('toolbar').style.display = 'none';
 
 function checkproducts(productName){
@@ -61,8 +63,8 @@ confirm.addEventListener("click", function(){
 });
 
 document.getElementById('createp').onclick = function(){
-    if (document.getElementById('pname').value == ''){
-        alert('Product name cannot be empty!')
+    if (document.getElementById('pname').value == '' || document.getElementById('pname').value.match(/^[0-9]+$/) != null ){
+        alert('Product name cannot be empty or be pure numbers!')
         return
     }
 
@@ -79,24 +81,46 @@ document.getElementById('createp').onclick = function(){
     newSpan.innerHTML = currency
     newText.innerHTML = document.getElementById('pname').value + ' | ' + document.getElementById('pcost').value + " ";
     if (document.getElementById("product") != null){
-        if (checkproducts(document.getElementById('pname').value) == true){
+        if (checkproducts(document.getElementById('pname').value) == true && cancreate == true){
             newText = null
             newSpan = null
             alert("Product already exists!");
-        }else if(checkproducts(document.getElementById('pname').value) == false){
+        }else if(checkproducts(document.getElementById('pname').value) == false && cancreate == true){
             newText.appendChild(newSpan)
             newText.id = "product";
             document.getElementById('products').appendChild(newText)
             if (cansearch == false){
                cansearch = true
             }
+            console.log("cant")
+            cancreate = false;
+            document.getElementById('createp').style.backgroundColor = "rgb(30, 8, 8)"
+            setTimeout(() => {
+                console.log("i think yes")
+                cancreate = true;
+                document.getElementById('createp').style.backgroundColor = "rgb(30, 30, 35)"
+            }, 2000);
+        }else if(cancreate == false){
+            alert("have you heard about our lord and saviour cooldown")
         }
     }else{
-        newText.appendChild(newSpan)
-        newText.id = "product";
-        document.getElementById('products').appendChild(newText)
-        if (cansearch == false){
-            cansearch = true
+        if (cancreate == true){
+            newText.appendChild(newSpan)
+            newText.id = "product";
+            document.getElementById('products').appendChild(newText)
+            if (cansearch == false){
+                cansearch = true
+            }
+            console.log("cant")
+            cancreate = false;
+            document.getElementById('createp').style.backgroundColor = "rgb(30, 8, 8)"
+            setTimeout(() => {
+                console.log("i think yes")
+                cancreate = true;
+                document.getElementById('createp').style.backgroundColor = "rgb(30, 30, 35)"
+            }, 2000);
+        }else if(cancreate == false){
+            alert("have you heard about our lord and saviour cooldown")
         }
     }
     
