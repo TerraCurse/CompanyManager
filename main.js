@@ -8,6 +8,7 @@ var currency = "CZK"
 var cansearch = false
 var cancreate = true
 var cbalance = 0
+var income = 0  
 const delay = ms => new Promise(res => setTimeout(res, ms));
 document.getElementById('toolbar').style.display = 'none';
 
