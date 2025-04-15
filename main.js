@@ -13,8 +13,7 @@ var income = 0
 document.getElementById('toolbar').style.display = 'none';
 
 
-console.log((5*5+250+25)*10)
-
+console.log("update clarifier")
 console.log("main.js is up and running! thanks for playing this small webgame btw.")
 
 function updateCBalance(){
