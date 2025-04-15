@@ -4,6 +4,7 @@ var rename = document.getElementById("rename");
 var rbox = document.getElementById("rname");
 var cnamei = document.getElementById("cnamei");
 var confirm = document.getElementById("confirm");
+var cbinput = document.getElementById('cbinput');
 var currency = "CZK"
 var cansearch = false
 var cancreate = true
@@ -11,7 +12,14 @@ var cbalance = 0
 var income = 0 
 document.getElementById('toolbar').style.display = 'none';
 
+
+console.log((5*5+250+25)*10)
+
 console.log("main.js is up and running! thanks for playing this small webgame btw.")
+
+function updateCBalance(){
+    document.getElementById('cbalance').innerHTML = cbalance;
+}
 
 function checkproducts(productName){
     for (const child of document.getElementsByClassName('productz')){
@@ -34,6 +42,11 @@ document.getElementById('createc').onclick = function(){
     document.getElementById('cbalance').innerHTML = cbalance;
     Tab = 'info';
     document.getElementById('toolbar').style.display = 'block';
+}
+
+document.getElementById('confirmbchange').onclick = function(){
+    cbalance = cbinput.value
+    console.log(cbalance)
 }
 
 document.getElementById('shopbutton').onclick = function(){
@@ -97,6 +110,10 @@ document.getElementById('createp').onclick = function(){
             console.log("cant")
             cancreate = false;
             document.getElementById('createp').style.backgroundColor = "rgb(30, 8, 8)"
+            var pq = document.getElementById('productquality').value
+            var pc = document.getElementById('pcost').value
+            var pa = document.getElementById('productamount').value
+            //cbalance = cbalance - (pc*5+pq+pa)*8
             setTimeout(() => {
                 console.log("i think yes")
                 cancreate = true;
@@ -116,6 +133,10 @@ document.getElementById('createp').onclick = function(){
             console.log("cant")
             cancreate = false;
             document.getElementById('createp').style.backgroundColor = "rgb(30, 8, 8)"
+            var pq = document.getElementById('productquality').value
+            var pc = document.getElementById('pcost').value
+            var pa = document.getElementById('productamount').value
+            //cbalance = cbalance - (pc*5+pq+pa)*8
             setTimeout(() => {
                 console.log("i think yes")
                 cancreate = true;
@@ -128,8 +149,15 @@ document.getElementById('createp').onclick = function(){
     
 }
 
+//Production cost formula: (QUALITY*5+COST+AMOUNT)*10
 setInterval(function myFunction(){
+    var pq = document.getElementById('productquality').value
+    var pc = document.getElementById('pcost').value
+    var pa = document.getElementById('productamount').value
     currency = document.getElementById("cselect").value
+    if (document.getElementById('cbalance').innerHTML != cbalance){
+        document.getElementById('cbalance').innerHTML = cbalance + currency;
+    }
     if (cansearch == true){
         for (const child of document.getElementsByClassName('pcurrency')){
             if (child.innerHTML != currency){
@@ -144,6 +172,7 @@ setInterval(function myFunction(){
     }
     if (Tab == 'shop'){
         document.getElementById('shoptab').style.display = 'block';
+        document.getElementById('prodcost').innerHTML = (pc*5+pq+pa)*8
     }else{
         document.getElementById('shoptab').style.display = 'none';
     }

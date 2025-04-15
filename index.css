@@ -2,6 +2,7 @@
     font-family: Roboto Condensed;
     color: white;
     font-weight: bold;
+    user-select: none;
 }
 
 body{

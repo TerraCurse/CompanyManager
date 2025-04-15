@@ -20,9 +20,9 @@
         <input placeholder="Company Name..." type="text" id="cname" maxlength="16" style="width: 200px;">
         <h3>Starting balance:</h3>
         <select id="sbalance">
-            <option>2,000,000$</option>
-            <option>5,000,000$</option>
-            <option>10,000,000$</option>
+            <option>2000000$</option>
+            <option>5000000$</option>
+            <option>10000000$</option>
         </select>
         <button id="createc" title="Creates your company and starts the game!" class="uibutton">Create</button>
     </div>
@@ -30,11 +30,13 @@
     <div id="infotab">
         <h3>Company Name: <span id="cnamei">WEMAKEPRODUCTS</span><button style="height: 45px; width: 45px; text-align: center;" title="Rename your company." id="rename"  class="uibutton"><img src="Images/edit.svg"></button><input style="display:none; width: 265px; font-size: 20px;" type="text" id="rname" maxlength="16"><button style="height: 45px; width: 45px; text-align: center; display: none;" title="Confirm the rename operation." id="confirm"><img src="Images/check.svg"></button></h3>
         <h3>Company Balance: <span id="cbalance">0 (currency)</span></h3>
+        <h2>DEV TESTING PANEL (AVAILABLE TO ALL CUS YES):</h2>
+        <h4>Change company balance: <input type="number" min="2000000" id="cbinput"><button style="height: 45px; width: 45px; text-align: center;" title="Confirm the balance change operation." id="confirmbchange"><img src="Images/check.svg"></button></h4>
     </div>
 
     <div id="shoptab">
         <h3>Products: <div id="products" class="productz"></div></h3>
-        <input placeholder="Product Name..." id="pname" type="text"><input placeholder="Product Cost..." id="pcost" type="number"><h5>Product Quality: <select id="productquality"><option>1⭐</option><option>2⭐⭐</option><option>3⭐⭐⭐</option><option>4⭐⭐⭐⭐</option><option>5⭐⭐⭐⭐⭐</option></select></h5><h4>Amount of product to make: <input type="number" id="productamount" min="1"><h4>Production cost: <span id="prodcost">unimplemented cus im lazy as hell (same for quality)</span></h4></h4><button id="createp" class="uibutton">Create Product</button>
+        <input placeholder="Product Name..." id="pname" type="text"><input placeholder="Product Cost..." id="pcost" type="number"><h5>Product Quality: <select id="productquality"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><h6>(stars)</h6></h5><h4>Amount of product to make: <input type="number" id="productamount" min="1"><h4>Production cost: <span id="prodcost">unimplemented cus im lazy as hell (same for quality)</span></h4></h4><button id="createp" class="uibutton">Create Product</button>
     </div>
 
     <div id="settingstab">
