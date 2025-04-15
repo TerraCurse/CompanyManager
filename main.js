@@ -8,9 +8,10 @@ var currency = "CZK"
 var cansearch = false
 var cancreate = true
 var cbalance = 0
-var income = 0  
-const delay = ms => new Promise(res => setTimeout(res, ms));
+var income = 0 
 document.getElementById('toolbar').style.display = 'none';
+
+console.log("main.js is up and running! thanks for playing this small webgame btw.")
 
 function checkproducts(productName){
     for (const child of document.getElementsByClassName('productz')){
